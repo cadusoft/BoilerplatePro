@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.Entity;
 using System.Linq;
 using System.Security.Claims;
@@ -22,6 +23,7 @@ using Abp.Web.Security.AntiForgery;
 using BoilerplatePro.Authorization;
 using BoilerplatePro.Authorization.Roles;
 using BoilerplatePro.Authorization.Users;
+using BoilerplatePro.Features;
 using BoilerplatePro.MultiTenancy;
 using BoilerplatePro.Sessions;
 using BoilerplatePro.Web.Controllers.Results;
@@ -72,11 +74,28 @@ namespace BoilerplatePro.Web.Controllers
 
         #region Login / Logout
 
-        public ActionResult Login(string returnUrl = "")
+        public ActionResult Login(string returnUrl = "", string ErrorMessage = null, string PasswordResetToken = null)
         {
             if (string.IsNullOrWhiteSpace(returnUrl))
             {
                 returnUrl = Request.ApplicationPath;
+            }
+
+            ViewBag.ErrorMessage = L(ErrorMessage);
+
+            if (!string.IsNullOrEmpty(PasswordResetToken))
+            {
+                User user = _userManager.Users.FirstOrDefault(x => x.PasswordResetCode.Equals(PasswordResetToken) && x.PasswordResetExpiry > DateTime.Now);
+
+                if (user == null)
+                {
+                    ViewBag.ErrorMessage = L("PasswordResetTokenExpired");
+                }
+                else
+                {
+                    ViewBag.PasswordResetToken = PasswordResetToken;
+                    ViewBag.ErrorMessage = L("ResettingPasswordMessage");
+                }
             }
 
             ViewBag.IsMultiTenancyEnabled = _multiTenancyConfig.IsEnabled;
@@ -93,14 +112,31 @@ namespace BoilerplatePro.Web.Controllers
 
         [HttpPost]
         [DisableAuditing]
-        public async Task<JsonResult> Login(LoginViewModel loginModel, string returnUrl = "", string returnUrlHash = "")
+        public async Task<JsonResult> Login(LoginViewModel loginModel, string returnUrl = "", string returnUrlHash = "", string PasswordResetToken = "")
         {
+            if (!string.IsNullOrEmpty(PasswordResetToken))
+            {
+                using (CurrentUnitOfWork.DisableFilter(AbpDataFilters.MayHaveTenant))
+                {
+                    User user = _userManager.Users.FirstOrDefault(x => x.EmailAddress == loginModel.UsernameOrEmailAddress && x.PasswordResetCode.Equals(PasswordResetToken) && x.PasswordResetExpiry > DateTime.Now);
+
+                    if (user == null)
+                    {
+                        RedirectToAction("Login", new { ErrorMessage = "PasswordResetTokenExpired" });
+                        return null;
+                    }
+
+                    user.Password = new PasswordHasher().HashPassword(loginModel.Password);
+                    user.PasswordResetExpiry = DateTime.Now;
+                }
+            }
+
             CheckModelState();
 
             var loginResult = await GetLoginResultAsync(
                 loginModel.UsernameOrEmailAddress,
                 loginModel.Password,
-                GetTenancyNameOrNull()
+                GetTenancyNameOrNull(loginModel.UsernameOrEmailAddress)
                 );
 
             await SignInAsync(loginResult.User, loginResult.Identity, loginModel.RememberMe);
@@ -293,11 +329,11 @@ namespace BoilerplatePro.Web.Controllers
                     AbpLoginResult<Tenant, User> loginResult;
                     if (externalLoginInfo != null)
                     {
-                        loginResult = await _logInManager.LoginAsync(externalLoginInfo.Login, GetTenancyNameOrNull());
+                        loginResult = await _logInManager.LoginAsync(externalLoginInfo.Login, GetTenancyNameOrNull(user.EmailAddress));
                     }
                     else
                     {
-                        loginResult = await GetLoginResultAsync(user.UserName, model.Password, GetTenancyNameOrNull());
+                        loginResult = await GetLoginResultAsync(user.UserName, model.Password, GetTenancyNameOrNull(user.EmailAddress));
                     }
 
                     if (loginResult.Result == AbpLoginResultType.Success)
@@ -312,7 +348,7 @@ namespace BoilerplatePro.Web.Controllers
                 //If can not login, show a register result page
                 return View("RegisterResult", new RegisterResultViewModel
                 {
-                    TenancyName = GetTenancyNameOrNull(),
+                    TenancyName = GetTenancyNameOrNull(user.EmailAddress),
                     NameAndSurname = user.Name + " " + user.Surname,
                     UserName = user.UserName,
                     EmailAddress = user.EmailAddress,
@@ -344,7 +380,7 @@ namespace BoilerplatePro.Web.Controllers
                     new
                     {
                         ReturnUrl = returnUrl,
-                        tenancyName = GetTenancyNameOrNull()
+                        tenancyName = GetTenancyNameOrNull(null)
                     })
             );
         }
@@ -508,11 +544,23 @@ namespace BoilerplatePro.Web.Controllers
             return tenant;
         }
 
-        private string GetTenancyNameOrNull()
+        private string GetTenancyNameOrNull(string emailAddress)
         {
-            if (!AbpSession.TenantId.HasValue)
+            using (CurrentUnitOfWork.DisableFilter(AbpDataFilters.MayHaveTenant))
             {
-                return null;
+                User user = _userManager.FindByEmail(emailAddress);
+
+                if (user != null)
+                {
+                    if (user.TenantId == null)
+                    {
+                        return null;
+                    }
+
+                    Tenant tenant = _tenantManager.GetById((int)user.TenantId);
+
+                    return tenant.TenancyName;
+                }
             }
 
             return _tenantCache.GetOrNull(AbpSession.TenantId.Value)?.TenancyName;
@@ -559,6 +607,37 @@ namespace BoilerplatePro.Web.Controllers
             return PartialView("_AccountLanguages", model);
         }
 
+        #endregion
+
+        #region Password Reset
+        public async Task<ActionResult> ResetPassword(string email)
+        {
+            using (CurrentUnitOfWork.DisableFilter(AbpDataFilters.MayHaveTenant))
+            {
+                User user = _userManager.Users.FirstOrDefault(x => x.EmailAddress.Equals(email));
+                string AppBaseUrl = ConfigurationManager.AppSettings["AppBaseUrl"];
+                string AppName = ConfigurationManager.AppSettings["AppName"];
+
+                if (user == null)
+                {
+                    return RedirectToAction("Login", new { returnUrl = "", ErrorMessage = "EmailNotFound." });
+                }
+
+                string passwordResetToken = Guid.NewGuid().ToString();
+
+                user.PasswordResetCode = passwordResetToken;
+                user.PasswordResetExpiry = DateTime.Now.AddHours(2);
+                string resetLink = AppBaseUrl + Url.Action("Login", new { PasswordResetToken = passwordResetToken });
+
+                await new UserMailerService().SendMailAsync(user.EmailAddress, user.FullName, $"{AppName} Password Reset",
+                    $"Hi {user.FullName},<br/><br/>" +
+                    $"A password reset was requested for your user on the {AppName}. To reset your password, please <a href='{resetLink}'>click here</a>.<br/><br/>" +
+                    $"If this was not you, please ignore this e-mail and your password will not change.</br><br/>"
+                    );
+
+                return RedirectToAction("Login", new { returnUrl = "", ErrorMessage = "CheckForPasswordLink" });
+            }
+        }
         #endregion
     }
 }

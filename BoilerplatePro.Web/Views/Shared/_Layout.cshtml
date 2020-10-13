@@ -32,6 +32,29 @@
     <!-- View specific styles -->
     @RenderSection("styles", required: false)
 
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    @{
+        var oneSignalAppId = Html.Action("GetOneSignalAppId", "Layout").ToHtmlString();
+
+        if (!string.IsNullOrEmpty(oneSignalAppId))
+        {
+            <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+            <script>
+                window.OneSignal = window.OneSignal || [];
+                OneSignal.push(function () {
+                    OneSignal.init({
+                        appId: "@oneSignalAppId",
+                    });
+                });
+            </script>
+        }
+    }
+
+
     <script type="text/javascript">
         //This is used to get the application's root path from javascript. It's useful if you're running application in a virtual directory under IIS.
         var abp = abp || {}; abp.appPath = '@ApplicationPath';
@@ -75,9 +98,10 @@
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" asp-controller="Home" asp-action="Index"><i class="fa fa-cubes"></i> BoilerplatePro</a>
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">@Html.Action("GetAppName", "Layout")</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
+                <button id="installAppPromo" class="btn btn-default pull-right" style="margin-top: 20px;margin-bottom: 20px;">Install App</button>
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Call Search -->
                     <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
@@ -154,5 +178,43 @@
 
     <!-- View specific scripts -->
     @RenderSection("scripts", required: false)
+    <script>
+    window.onload = function () { OneSignal.setExternalUserId("@(Html.Action("GetUserId","Layout"))"); };
+
+    Notification.requestPermission().then(function (permission) { console.log('permiss', permission) });
+
+    let deferredPrompt;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+        // Prevent the mini-infobar from appearing on mobile
+        e.preventDefault();
+        // Stash the event so it can be triggered later.
+        deferredPrompt = e;
+        // Update UI notify the user they can install the PWA
+        $("#installAppPromo").show();
+    });
+
+    $("#installAppPromo").click(function (e) {
+        // Hide the app provided install promotion
+        $("#installAppPromo").hide();
+        // Show the install prompt
+        deferredPrompt.prompt();
+        // Wait for the user to respond to the prompt
+        deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('User accepted the install prompt');
+            } else {
+                console.log('User dismissed the install prompt');
+            }
+        });
+    });
+
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+            .register('/serviceworker.js')
+            .then(function () { console.log('Service Worker Registered'); });
+    }
+    </script>
+
 </body>
 </html>

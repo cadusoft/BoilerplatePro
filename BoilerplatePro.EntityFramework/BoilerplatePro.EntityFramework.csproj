@@ -277,6 +277,10 @@
     <Compile Include="Migrations\202009281416152_Upgraded_To_ABP_5_13_0.designer.cs">
       <DependentUpon>202009281416152_Upgraded_To_ABP_5_13_0.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010131248159_Added Password Reset User Fields.cs" />
+    <Compile Include="Migrations\202010131248159_Added Password Reset User Fields.designer.cs">
+      <DependentUpon>202010131248159_Added Password Reset User Fields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\SeedData\DefaultEditionsCreator.cs" />
@@ -334,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009281416152_Upgraded_To_ABP_5_13_0.resx">
       <DependentUpon>202009281416152_Upgraded_To_ABP_5_13_0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010131248159_Added Password Reset User Fields.resx">
+      <DependentUpon>202010131248159_Added Password Reset User Fields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

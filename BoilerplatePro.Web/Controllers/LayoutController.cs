@@ -1,4 +1,7 @@
-﻿using System.Linq;
+﻿using System.Configuration;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web.Mvc;
 using Abp.Application.Navigation;
 using Abp.Configuration;
@@ -31,6 +34,45 @@ namespace BoilerplatePro.Web.Controllers
             _sessionAppService = sessionAppService;
             _multiTenancyConfig = multiTenancyConfig;
             _languageManager = languageManager;
+        }
+
+        [ChildActionOnly]
+        public string GetUserId()
+        {
+            return AsyncHelper.RunSync(() => _sessionAppService.GetCurrentLoginInformations()).User.Id.ToString();
+        }
+
+        [ChildActionOnly]
+        public string GetAppName()
+        {
+            return ConfigurationManager.AppSettings["AppName"];
+        }
+
+        [ChildActionOnly]
+        public string GetOneSignalAppId()
+        {
+            return ConfigurationManager.AppSettings["OneSignalAppId"];
+        }
+
+        [AcceptVerbs(HttpVerbs.Post | HttpVerbs.Get)]
+        [ChildActionOnly]
+        public string GetUserEmailHash(string Email)
+        {
+            //Get user e-mail hash for gravatar
+            // step 1, calculate MD5 hash from input
+
+            MD5 md5 = MD5.Create();
+            byte[] inputBytes = Encoding.ASCII.GetBytes(Email);
+            byte[] hash = md5.ComputeHash(inputBytes);
+
+            // step 2, convert byte array to hex string
+
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < hash.Length; i++)
+            {
+                sb.Append(hash[i].ToString("x2"));
+            }
+            return sb.ToString();
         }
 
         [ChildActionOnly]

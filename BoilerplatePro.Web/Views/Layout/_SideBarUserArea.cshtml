@@ -1,7 +1,7 @@
 ﻿@model BoilerplatePro.Web.Models.Layout.SideBarUserAreaViewModel
 <div class="user-info">
     <div class="image">
-        <img src="~/images/user.png" width="48" height="48" alt="User" />
+        <a href="https://en.gravatar.com/emails/" title="Change Avatar" target="_blank"><img class="useravatar" src="@Html.Raw("https://www.gravatar.com/avatar/" + Html.Action("GetUserEmailHash","Layout", new { Email = Model.LoginInformations.User.EmailAddress }))" /></a>
     </div>
     <div class="info-container">
         <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Html.Raw(Model.GetShownLoginName())</div>

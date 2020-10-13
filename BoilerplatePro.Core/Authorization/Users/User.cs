@@ -9,6 +9,8 @@ namespace BoilerplatePro.Authorization.Users
     {
         public const string DefaultPassword = "123qwe";
 
+        public DateTime PasswordResetExpiry { get; set; }
+
         public static string CreateRandomPassword()
         {
             return Guid.NewGuid().ToString("N").Truncate(16);
