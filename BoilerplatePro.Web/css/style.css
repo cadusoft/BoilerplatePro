@@ -7511,7 +7511,7 @@ fieldset[disabled] .form-control {
     white-space: nowrap;
     position: relative;
     border-bottom: 1px solid #e9e9e9;
-    background: url("../images/user-img-background.jpg") no-repeat no-repeat;
+    background: url("/images/user-img-background.jpg") no-repeat no-repeat;
     height: 135px; }
     .sidebar .user-info .image {
       margin-right: 12px;
@@ -7722,7 +7722,7 @@ img.useravatar {
   max-width: 360px;
   margin: 5% auto;
   overflow-x: hidden;
-  background-image: url(../login.jpg);
+  background-image: url(/login.jpg);
   background-size: cover; }
   .login-page .login-box .msg {
     color: #555;

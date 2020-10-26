@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -53,6 +54,7 @@ namespace BoilerplatePro.Users
             user.TenantId = AbpSession.TenantId;
             user.Password = new PasswordHasher().HashPassword(input.Password);
             user.IsEmailConfirmed = true;
+            user.PasswordResetExpiry = DateTime.Now;
 
             //Assign roles
             user.Roles = new Collection<UserRole>();
