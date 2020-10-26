@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Abp.Authorization;
 using Abp.Authorization.Roles;
@@ -78,7 +79,8 @@ namespace BoilerplatePro.Migrations.SeedData
                         Surname = "Administrator",
                         EmailAddress = "admin@aspnetboilerplate.com",
                         IsEmailConfirmed = true,
-                        Password = new PasswordHasher().HashPassword(User.DefaultPassword)
+                        Password = new PasswordHasher().HashPassword(User.DefaultPassword),
+                        PasswordResetExpiry = DateTime.Now
                     });
 
                 adminUserForHost.SetNormalizedNames();

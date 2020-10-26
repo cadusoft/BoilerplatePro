@@ -6,5 +6,9 @@
   {
     "outputFile": "Views/Account/Login.css",
     "inputFile": "Views/Account/Login.less"
+  },
+  {
+    "outputFile": "css/style.css",
+    "inputFile": "scss/style.scss"
   }
 ]

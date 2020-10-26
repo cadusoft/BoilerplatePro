@@ -60,7 +60,7 @@ namespace BoilerplatePro.Features
 
             try
             {
-                if (!string.IsNullOrEmpty("SmtpServer"))
+                if (!string.IsNullOrEmpty(smtpServer))
                 {
                     using (smtpClient = new SmtpClient())
                     {

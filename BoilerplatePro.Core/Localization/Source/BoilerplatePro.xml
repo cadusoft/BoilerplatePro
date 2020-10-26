@@ -25,7 +25,7 @@
     <text name="EmailNotFound" value="Sorry, we couldn't find your e-mail address. Please check your details and try again!" />
     <text name="CheckForPasswordLink" value="Please check your e-mail for a password reset link!" />
     <text name="PasswordResetTokenExpired" value="The password reset token is invalid or has expired. Please try again." />
-    <text name="ResettingPasswordMessage" value="ResettingPasswordMessage" />
+    <text name="ResettingPasswordMessage" value="You're resetting your password. Please enter your e-mail address and new password below." />
 
     <text name="NameSurname" value="Name surname" />
     <text name="UserName" value="User name" />

@@ -72,6 +72,7 @@ namespace BoilerplatePro.Migrations.SeedData
                 adminUser = User.CreateTenantAdminUser(_tenantId, "admin@defaulttenant.com", User.DefaultPassword);
                 adminUser.IsEmailConfirmed = true;
                 adminUser.IsActive = true;
+                adminUser.PasswordResetExpiry = System.DateTime.Now;
 
                 _context.Users.Add(adminUser);
                 _context.SaveChanges();

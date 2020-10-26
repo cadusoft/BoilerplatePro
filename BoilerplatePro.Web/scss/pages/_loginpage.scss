@@ -1,9 +1,11 @@
 ﻿.login-page {
-    background-color: #00BCD4;
-    padding-left: 0;
-    max-width: 360px;
-    margin: 5% auto;
-    overflow-x: hidden;
+        background-color: #00BCD4;
+        padding-left: 0;
+        max-width: 360px;
+        margin: 5% auto;
+        overflow-x: hidden;
+        background-image: url(../login.jpg);
+        background-size: cover;
 
     .login-box {
         .msg {

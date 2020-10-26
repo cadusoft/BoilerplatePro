@@ -5,6 +5,7 @@ using Abp.Zero.EntityFramework;
 using BoilerplatePro.Authorization.Roles;
 using BoilerplatePro.Authorization.Users;
 using BoilerplatePro.MultiTenancy;
+using BoilerplatePro.nuDirect;
 
 namespace BoilerplatePro.EntityFramework
 {

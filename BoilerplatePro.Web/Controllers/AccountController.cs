@@ -81,6 +81,7 @@ namespace BoilerplatePro.Web.Controllers
                 returnUrl = Request.ApplicationPath;
             }
 
+            if(!string.IsNullOrEmpty(ErrorMessage))
             ViewBag.ErrorMessage = L(ErrorMessage);
 
             if (!string.IsNullOrEmpty(PasswordResetToken))

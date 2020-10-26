@@ -34,3 +34,13 @@
     });
 
 })();
+
+function resetPassword() {
+    if ($("#usernameBox").val() === "") {
+        alert("Please enter an e-mail address");
+        return;
+    }
+
+    var link = "/Account/ResetPassword?email=" + $("#usernameBox").val();
+    window.location.href = link;
+}

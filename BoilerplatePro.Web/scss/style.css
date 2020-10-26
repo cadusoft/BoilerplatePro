@@ -1,5 +1,5 @@
 ﻿/* Navbar ====================================== */
-@import url(materialize.css);
+@import url(../css/materialize.css);
 .navbar {
   font-family: "Roboto", sans-serif;
   -webkit-border-radius: 0;
@@ -3355,13 +3355,6 @@ section.content {
 
 .info-box-4.hover-expand-effect:hover:after {
   width: 100%; }
-
-.error-message-box {
-  background-color: #062e3a;
-  color: white;
-  padding: 20px;
-  margin: 10px 0px 20px 0;
-  text-align: center; }
 
 /* Alerts ====================================== */
 .alert {
@@ -7690,9 +7683,6 @@ fieldset[disabled] .form-control {
         width: 45%; }
       .right-sidebar .nav-tabs li:last-child {
         width: 55%; }
-
-img.useravatar {
-  max-width: 45px; }
 
 /* Bootstrap Notify ============================ */
 .bootstrap-notify-container {

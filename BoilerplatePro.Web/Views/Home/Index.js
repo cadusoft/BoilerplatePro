@@ -16,8 +16,29 @@
 
 var realtime = 'on';
 function initRealTimeChart() {
+    var ArrayData = $.map($('#TenHourTransfers').val().split(','), function (value) {
+        return parseInt(value, 10);
+        // or return +value; which handles float values as well
+    });
+
+    var datarays = $('#TenHourTransfers').val();
+    var dataray = datarays.split(',').map(function (item) {
+        return parseInt(item, 10);
+    });
+    var maxnum = 2;
+    var dt = new Date();
+    var s = new Array(dataray.length);
+    for (var i = 1; i < dataray.length + 1; i++) {
+        s[i - 1] = [new Date().setHours(dt.getHours()-8+i,0,0,0), dataray[i - 1]];
+        if (dataray[i - 1] > maxnum) {
+            maxnum = dataray[i - 1];
+        }
+    }
+
+    console.log(s);
+
     //Real time ==========================================================================================
-    var plot = $.plot('#real_time_chart', [getRandomData()], {
+    var plot = $.plot('#real_time_chart', [s], {
         series: {
             shadowSize: 0,
             color: 'rgb(0, 188, 212)'
@@ -32,31 +53,52 @@ function initRealTimeChart() {
         },
         yaxis: {
             min: 0,
-            max: 100
+            max: maxnum,
+            tickSize: 1,
+            tickDecimals: 0
         },
         xaxis: {
-            min: 0,
-            max: 100
+            min: new Date().setHours(dt.getHours() -7,0,0,0),
+            max: new Date().setHours(dt.getHours() +2,0,0,0),
+            minTickSize: [1, "hour"],
+            mode: "time",
+            timeformat: "%h:%M"
         }
     });
 
-    function updateRealTime() {
-        plot.setData([getRandomData()]);
-        plot.draw();
+    var timeout;
 
-        var timeout;
+    //function updateRealTime() {
+    //    var ArrayData = $.map($('#TenHourTransfers').val().split(','), function (value) {
+    //        return parseInt(value, 10);
+    //        // or return +value; which handles float values as well
+    //    });
+
+    //    plot.setData(ArrayData);
+    //    plot.draw();
+    //}
+
+    //updateRealTime();
+
+    function refreshPage() {
+        window.location.reload();
+    }
+
+    function pad(n, width, z) {
+        z = z || '0';
+        n = n + '';
+        return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+    }
+
+    $('#realtime').on('change', function () {
+        console.log("Changed refresh to " + this.checked);
+        realtime = this.checked ? 'on' : 'off';
+
         if (realtime === 'on') {
-            timeout = setTimeout(updateRealTime, 320);
+            timeout = setTimeout(refreshPage, 300000);
         } else {
             clearTimeout(timeout);
         }
-    }
-
-    updateRealTime();
-
-    $('#realtime').on('change', function () {
-        realtime = this.checked ? 'on' : 'off';
-        updateRealTime();
     });
     //====================================================================================================
 }
@@ -72,25 +114,18 @@ function initDonutChart() {
     Morris.Donut({
         element: 'donut_chart',
         data: [{
-                label: 'Chrome',
-                value: 37
+            label: 'Success',
+            value: $("#TransfersByStatusses").val().split(",")[0]
             }, {
-                label: 'Firefox',
-                value: 30
+                label: 'Waiting',
+                value: $("#TransfersByStatusses").val().split(",")[1]
             }, {
-                label: 'Safari',
-                value: 18
-            }, {
-                label: 'Opera',
-                value: 12
-            },
-            {
-                label: 'Other',
-                value: 3
+                label: 'Failed',
+                value: $("#TransfersByStatusses").val().split(",")[2]
             }],
-        colors: ['rgb(233, 30, 99)', 'rgb(0, 188, 212)', 'rgb(255, 152, 0)', 'rgb(0, 150, 136)', 'rgb(96, 125, 139)'],
+        colors: ['rgb(0, 255, 0)', 'rgb(0, 150, 150)', 'rgb(255, 0, 0)'],
         formatter: function (y) {
-            return y + '%'
+            return y
         }
     });
 }
