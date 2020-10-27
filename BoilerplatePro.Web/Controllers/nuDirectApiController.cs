@@ -113,6 +113,22 @@ namespace BoilerplatePro.Web.Controllers
             return folders;
         }
 
+        public async Task<List<CustomerEntities>> GetAllCustomers()
+        {
+            List<CustomerEntities> Customers = new List<CustomerEntities>();
+
+            using (HttpClient client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", await GetAuthenticationToken());
+
+                string response = await (await client.GetAsync(ApiBaseUrl + "Customers")).Content.ReadAsStringAsync();
+
+                Customers = JsonConvert.DeserializeObject<List<CustomerEntities>>(response);
+            }
+
+            return Customers;
+        }
+
         private class AuthenticationResponse
         {
             public string access_token { get; set; }

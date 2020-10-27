@@ -4,294 +4,77 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="card">
+    <div class="header">
+        <h2>Endpoints</h2>
+    </div>
+    <div class="body">
+        <table class="table">
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    Status
+                </th>
+                <th>
+                    Last Seen
+                </th>
+                <th>
+                    Type
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Enabled)
+                </th>
+                <th>
+                    Primary Contact
+                </th>
+            </tr>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.EndpointId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.epGUID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.epKey)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RegisteredDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastSeenDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.epType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Version)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CustomerId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.epIV)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Enabled)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.epVersion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.KnownIP)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FoundIP)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Hostname)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.VirtSFTPUser)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.VirtSFTPPass)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.VirtSFTPServer)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Configured)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LocalSFTPHome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RemoteSFTPHome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LocalUser)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LocalPass)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RemoteUser)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RemotePass)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PublicKey)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PrivateKey)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SSHPrivateKey)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SSHPublicKey)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PPublicKey)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PPrivateKey)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PSSHPrivateKey)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PSSHPublicKey)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Activated)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DualChannel)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.oMaxConcurrent)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.oCompression)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HeartBeatCheck)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MaxConcurrent)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Compression)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AlternateIP1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SFTPJobType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SFTPJobDebug)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SFTPBufferSize)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TCPBufferSize)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.EndpointId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.epGUID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.epKey)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RegisteredDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastSeenDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.epType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Version)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CustomerId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.epIV)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Enabled)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.epVersion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.KnownIP)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FoundIP)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Hostname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.VirtSFTPUser)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.VirtSFTPPass)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.VirtSFTPServer)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Configured)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LocalSFTPHome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RemoteSFTPHome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LocalUser)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LocalPass)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RemoteUser)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RemotePass)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PublicKey)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PrivateKey)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SSHPrivateKey)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SSHPublicKey)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PPublicKey)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PPrivateKey)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PSSHPrivateKey)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PSSHPublicKey)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Activated)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DualChannel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.oMaxConcurrent)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.oCompression)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HeartBeatCheck)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MaxConcurrent)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Compression)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AlternateIP1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SFTPJobType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SFTPJobDebug)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SFTPBufferSize)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TCPBufferSize)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
-
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EndpointId)
+                    </td>
+                    <td>
+                        @Html.ActionLink(item.Description, "ShowEndpointData", new { id = item.EndpointId })
+                    </td>
+                    <td>
+                        @if (item.LastSeenDate < DateTime.Now.AddDays(1) && item.epType != "SFTP Server")
+                        {
+                            <i class="material-icons" style="color:red;">report</i>
+                        }
+                        else if (item.LastSeenDate < DateTime.Now.AddHours(6) && item.epType != "SFTP Server")
+                        {
+                            <i class="material-icons" style="color:orange;">help</i>
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastSeenDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.epType)
+                    </td>
+                    <td>
+                        <input type="checkbox" name="Enabled" value="true" id="Enabled" class="filled-in" @(item.Enabled == true ? "checked" : "") />
+                        <label for="Enabled"></label>
+                    </td>
+                    <td>
+                        @if (item.customer.Contacts.Count() == 0)
+                        {
+                            <p>No Contact Specified</p>
+                        } else {
+                        @Html.Raw(item.customer.Contacts.First().Surname +", " + @item.customer.Contacts.First().Name + "<br/>" +
+                        @item.customer.Contacts.First().Mobile + "<br/>")
+                        <a href="mailto:@item.customer.Contacts.First().Email" target="_blank">@item.customer.Contacts.First().Email</a>
+                        }
+                    </td>
+                </tr>
+            }
+    </div>
+</div>
 </table>

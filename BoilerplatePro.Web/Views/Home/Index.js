@@ -54,7 +54,7 @@ function initRealTimeChart() {
         yaxis: {
             min: 0,
             max: maxnum,
-            tickSize: 1,
+            tickSize: 1000,
             tickDecimals: 0
         },
         xaxis: {

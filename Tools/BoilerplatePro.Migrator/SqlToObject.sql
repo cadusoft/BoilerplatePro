@@ -1,4 +1,4 @@
-﻿declare @TableName sysname = 'FolderEntities'
+﻿declare @TableName sysname = 'ContactEntities'
 declare @Result varchar(max) = 'public class ' + @TableName + '
 {'
 

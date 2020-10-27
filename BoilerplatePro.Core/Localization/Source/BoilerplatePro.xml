@@ -80,6 +80,9 @@
     <text name="EditUser">Edit User</text>
     <text name="Edit">Edit</text>
     <text name="Delete">Delete</text>
+    
+    <text name="Transfers">Transfers</text>
+    <text name="Endpoints">Endpoints</text>
 
 
   </texts>

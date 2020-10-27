@@ -1,0 +1,102 @@
+﻿@model BoilerplatePro.nuDirect.EndpointEntities
+@{
+    ViewBag.Title = "Endpoint Information";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="header">
+                <h4>Endpoint</h4>
+            </div>
+            <div class="body">
+                <p><strong>ID:</strong> @Model.EndpointId</p>
+                <p><strong>Customer:</strong> @Model.customer.Company</p>
+                <p><strong>Type:</strong> @Model.epType</p>
+                <p><strong>Last Seen:</strong> @Model.LastSeenDate</p>
+                <p><strong>Is Enabled:</strong> @(Model.Enabled?"Yes":"No")</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="header">
+                <h4>@Model.Description</h4>
+            </div>
+            <div class="body">
+                <h5>Contacts</h5>
+                @foreach(BoilerplatePro.nuDirect.ContactEntities contact in Model.customer.Contacts)
+                {
+                    <div style="background-color: lightseagreen; padding: 15px; margin: 5px; width: 95%; border-radius: 5px; display: inline-block; color: white !important;">
+                        <p><i class="material-icons">person</i> <strong>@(contact.Surname + ", " + contact.Name)</strong></p>
+                        <p>
+                            <i class="material-icons">phone</i> @contact.Mobile<br />
+                            <i class="material-icons">phone</i> @contact.LandLine<br />
+                            <i class="material-icons">email</i> <a href="mailto:@contact.Email" target="_blank" style="color:white !important;">@contact.Email</a>
+                        </p>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="header">
+                <h5>Folders</h5>
+            </div>
+            <div class="body">
+                @foreach (BoilerplatePro.nuDirect.FolderEntities folder in Model.folders)
+                {
+                    <div style="background-color:deeppink; padding:15px; margin:5px; width:95%; border-radius:5px; display:inline-block; color:white !important">
+                        <strong>@(folder.Description)</strong><br /><br/>
+                        <i class="material-icons">check_circle</i>   @(folder.Active == 1 ? "Active":"Inactive")<br />
+                        <i class="material-icons">payment</i>   @(folder.CostCentreCode)<br />
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="header">
+                <h5>Diagnostic Data</h5>
+            </div>
+            <div class="body">
+                <h6>Ping</h6>
+                <p>
+                    <i class="material-icons">airplay</i><strong>Ping (Status):</strong> @ViewBag.PingStatus<br />
+                    <i class="material-icons">settings_ethernet</i><strong>Ping (Reply Address):</strong> @ViewBag.PingReplyAddress<br />
+                    <i class="material-icons">sync</i><strong>Ping (ms):</strong> @ViewBag.PingResponseTime
+                </p>
+
+                <h6>IP Addresses</h6>
+                <p>
+                    <i class="material-icons">desktop_windows</i><strong>Operating System:</strong> @(Model.epType.Contains("Windows")? "Windows" : "Unknown")<br />
+                    <i class="material-icons">settings_ethernet</i><strong>Known IP Address:</strong> @(Model.KnownIP)<br />
+                    <i class="material-icons">settings_ethernet</i><strong>Alternative IP Address:</strong> @(Model.AlternateIP1)
+                </p>
+
+                <p>
+                    <h6>Similar Endpoints:</h6><br />
+                    @foreach (BoilerplatePro.nuDirect.EndpointEntities endpoint in ViewBag.SimilarEndpoints)
+                    {
+                        @Html.ActionLink(endpoint.Description, "ShowEndpointData", new { id = endpoint.EndpointId })<br />
+                    }
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card i.material-icons {
+        vertical-align: top;
+        margin-right: 5px;
+        font-size: 20px;
+    }
+</style>

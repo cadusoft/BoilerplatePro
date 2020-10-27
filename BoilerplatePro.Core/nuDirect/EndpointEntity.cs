@@ -16,6 +16,10 @@ namespace BoilerplatePro.nuDirect
 
         public string epKey { get; set; }
 
+        public CustomerEntities customer { get; set; }
+
+        public FolderEntities[] folders { get; set; }
+
         public DateTime RegisteredDate { get; set; }
 
         public DateTime LastSeenDate { get; set; }

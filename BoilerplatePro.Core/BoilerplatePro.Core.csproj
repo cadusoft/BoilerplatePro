@@ -240,6 +240,8 @@
     <Compile Include="Features\UserMailerService.cs" />
     <Compile Include="MultiTenancy\Tenant.cs" />
     <Compile Include="MultiTenancy\TenantManager.cs" />
+    <Compile Include="nuDirect\ContactEntity.cs" />
+    <Compile Include="nuDirect\CustomerEntity.cs" />
     <Compile Include="nuDirect\EndpointEntity.cs" />
     <Compile Include="nuDirect\FolderEntity.cs" />
     <Compile Include="nuDirect\TransferEntity.cs" />

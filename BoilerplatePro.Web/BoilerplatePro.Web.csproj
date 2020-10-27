@@ -2823,6 +2823,7 @@
     <Compile Include="Controllers\Results\ChallengeResult.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\TenantsController.cs" />
+    <Compile Include="Controllers\TransfersController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Models\Account\TenantChangeModalViewModel.cs" />
@@ -2972,6 +2973,9 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <Content Include="Views\Endpoints\Index.cshtml" />
+    <Content Include="Views\Transfers\TransfersByEntity.cshtml" />
+    <Content Include="Views\Transfers\TransfersByEndpoints.cshtml" />
+    <Content Include="Views\Endpoints\ShowEndpointData.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

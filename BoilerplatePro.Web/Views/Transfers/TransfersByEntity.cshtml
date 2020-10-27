@@ -1,0 +1,54 @@
+﻿@model List<BoilerplatePro.Web.Controllers.EntityTransferCountModel>
+@{
+    ViewBag.Title = "Transfers By Entity";
+}
+
+@if (Request.Params.Get("EntityType") == null)
+{
+<form>
+    <div class="card">
+        <div class="header">
+            <h2>What would you like to look for?</h2>
+        </div>
+        <div class="body">
+            <p>Transfers done by...</p>
+
+            <select name="EntityType">
+                <option value="Customer">Customers</option>
+                <option value="BusinessUnit">Business Units</option>
+                <option value="CostCenter">Cost Centers</option>
+            </select>
+
+            <p style="margin-top:10px;">starting from...</p>
+            <input required type="date" name="StartDate" value="@DateTime.Now.AddDays(-7).ToString("s")" />
+            <p style="margin-top:10px;">until...</p>
+            <input required type="date" name="EndDate" value="@DateTime.Now.ToString("s")" /><br/><br/>
+            <button type="submit" class="btn bg-pink">Search</button>
+        </div>
+    </div>
+    
+</form>
+    return;
+}
+
+<div class="card">
+    <div class="header">
+        <h2>Transfers by @System.Text.RegularExpressions.Regex.Replace(@Request.Params.Get("EntityType").ToString(), "(\\B[A-Z])", " $1")</h2>
+    </div>
+    <div class="body">
+        <table class="table">
+            <tr>
+                <th>@System.Text.RegularExpressions.Regex.Replace(@Request.Params.Get("EntityType").ToString(), "(\\B[A-Z])", " $1")</th>
+                <th>Transfers</th>
+            </tr>
+            @foreach (BoilerplatePro.Web.Controllers.EntityTransferCountModel item in Model)
+            {
+                <tr>
+                    <td>@item.EntityName</td>
+                    <td>@item.EntityCount</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
