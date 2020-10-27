@@ -132,7 +132,7 @@
                 <ul class="dashboard-stat-list">
                     @foreach (BoilerplatePro.nuDirect.EndpointEntities endpoint in Model.Endpoints.Where(x => x.LastSeenDate < DateTime.Now.AddHours(-6)).Take(6))
                     {
-                        <li>@endpoint.Description</li>
+                        <li>@Html.ActionLink(endpoint.Description, "ShowEndpointData", "Endpoints", new { id = endpoint.EndpointId }, new { style = "color:white; text-decoration:underline;" })</li>
                     }
                 </ul>
             </div>
@@ -152,6 +152,7 @@
                         <span class="pull-right"><b>@count.CostCenterCount</b> <small>TRANSFERS</small></span>
                     </li>
                     }
+                    @Html.ActionLink("View All" ,"TransfersByEntity", "Transfers", new { EntityType = "CostCenter", StartDate=DateTime.Now.ToString("yyyy-MM-dd"), EndDate = DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd") }, new { style="color:white; text-decoration:underline;" })
                 </ul>
             </div>
         </div>
@@ -174,8 +175,10 @@
             </div>
             <div class="body">
                 <div class="table-responsive">
-                    @Html.ActionLink("View Endpoints Statusses", "Index", "Endpoints")<br/>
-                    @Html.ActionLink("View Transfers by Cost Centers", "TransfersByCostCenter", "Reports")
+                    @Html.ActionLink("View Customers", "Index", "Customers")<br/>
+                    @Html.ActionLink("View Endpoints", "Index", "Endpoints")<br/>
+                    @Html.ActionLink("View Transfers by Cost Center for the last 7 days", "TransfersByEntity", "Transfers", new { EntityType = "CostCenter", StartDate = DateTime.Now.ToString("yyyy-MM-dd"), EndDate = DateTime.Now.AddDays(-7).ToString("yyyy-MM-dd") }, null)<br/>
+                    @Html.ActionLink("View Transfers by Customer for the last 7 days", "TransfersByEntity", "Transfers", new { EntityType = "Customer", StartDate = DateTime.Now.ToString("yyyy-MM-dd"), EndDate = DateTime.Now.AddDays(-7).ToString("yyyy-MM-dd") }, null)<br/>
                     @*<table class="table table-hover dashboard-task-infos">
                             <thead>
                                 <tr>
