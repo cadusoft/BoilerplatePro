@@ -1,20 +1,19 @@
-﻿@model BoilerplatePro.nuDirect.EndpointEntities
+﻿@model BoilerplatePro.nuDirect.CustomerEntities
 @{
-    ViewBag.Title = "Endpoint Information";
+    ViewBag.Title = "Customer Information";
 }
 
 <div class="row">
     <div class="col-md-6">
         <div class="card">
             <div class="header">
-                <h4>Endpoint</h4>
+                <h4>Customer</h4>
             </div>
             <div class="body">
-                <p><strong>ID:</strong> @Model.EndpointId</p>
-                <p><strong>Customer:</strong> @Html.ActionLink(Model.customer.Company, "ViewCustomer", "Customers", new { id = Model.CustomerId }, null)</p>
-                <p><strong>Type:</strong> @Model.epType</p>
-                <p><strong>Last Seen:</strong> @Model.LastSeenDate</p>
-                <p><strong>Is Enabled:</strong> @(Model.Enabled?"Yes":"No")</p>
+                <p><strong>ID:</strong> @Model.CustomerId</p>
+                <p><strong>Company Name:</strong> @Model.Company</p>
+                <p><strong>City:</strong> @Model.City</p>
+                <p><strong>Country:</strong> @Model.Country</p>
             </div>
         </div>
     </div>
@@ -22,11 +21,11 @@
     <div class="col-md-6">
         <div class="card">
             <div class="header">
-                <h4>@Model.Description</h4>
+                <h4>Contacts</h4>
             </div>
             <div class="body">
                 <h5>Contacts</h5>
-                @foreach(BoilerplatePro.nuDirect.ContactEntities contact in Model.customer.Contacts)
+                @foreach(BoilerplatePro.nuDirect.ContactEntities contact in Model.Contacts)
                 {
                     <div style="background-color: lightseagreen; padding: 15px; margin: 5px; width: 95%; border-radius: 5px; display: inline-block; color: white !important;">
                         <p><i class="material-icons">person</i> <strong>@(contact.Surname + ", " + contact.Name)</strong></p>
@@ -43,25 +42,26 @@
 </div>
 
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
         <div class="card">
             <div class="header">
-                <h5>Folders</h5>
+                <h5>Endpoints</h5>
             </div>
             <div class="body">
-                @foreach (BoilerplatePro.nuDirect.FolderEntities folder in Model.folders)
+                @foreach (BoilerplatePro.nuDirect.EndpointEntities endpoint in ViewBag.Endpoints)
                 {
-                    <div style="background-color:deeppink; padding:15px; margin:5px; width:95%; border-radius:5px; display:inline-block; color:white !important">
-                        <strong>@(folder.Description)</strong><br /><br/>
-                        <i class="material-icons">check_circle</i>   @(folder.Active == 1 ? "Active":"Inactive")<br />
-                        <i class="material-icons">payment</i>   @(folder.CostCentreCode)<br />
+                    <div style="background-color:deeppink; padding:15px; margin:5px; width:31%; border-radius:5px; display:inline-block; color:white !important">
+                        <strong>@Html.ActionLink(endpoint.Description, "ShowEndpointData", "Endpoints", new { id = endpoint.EndpointId }, new { style="color:white !important; text-decoration: underline;" })</strong><br /><br/>
+                        <i class="material-icons">check_circle</i>   @(endpoint.Enabled  ? "Enabled":"Disabled")<br />
+                        <i class="material-icons">dns</i>   @(endpoint.epType)<br />
+                        <i class="material-icons">folder</i>   @(endpoint.folders.Count())<br />
                     </div>
                 }
             </div>
         </div>
     </div>
 
-    <div class="col-md-6">
+    @*<div class="col-md-6">
         <div class="card">
             <div class="header">
                 <h5>Diagnostic Data</h5>
@@ -90,7 +90,7 @@
                 </p>
             </div>
         </div>
-    </div>
+    </div>*@
 </div>
 
 <style>

@@ -9,5 +9,6 @@ namespace BoilerplatePro.Web
         public const string Roles = "Roles";
         public const string Endpoints = "Endpoints";
         public const string Transfers = "Transfers";
+        public const string Customers = "Customers";
     }
 }

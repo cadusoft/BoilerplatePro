@@ -2843,3 +2843,193 @@ DEBUG 2020-10-27 14:45:38,364 [55   ] Abp.Web.SignalR.Hubs.AbpCommonHub        -
 DEBUG 2020-10-27 14:46:24,280 [55   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 3ae93b34-c0cf-4c1b-963c-202cad3844f6
 DEBUG 2020-10-27 14:46:27,772 [55   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"43b12681-469e-49c1-99d6-4e21d74bb049","IpAddress":"::1","TenantId":null,"UserId":2,"ConnectTime":"2020-10-27T14:46:27.7727216+02:00","Properties":{}}
 DEBUG 2020-10-27 14:46:27,825 [79   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 43b12681-469e-49c1-99d6-4e21d74bb049
+DEBUG 2020-10-27 15:12:32,792 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2020-10-27 15:12:32,874 [1    ] Abp.Modules.AbpModuleManager             - Found 17 ABP modules in total.
+DEBUG 2020-10-27 15:12:32,902 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BoilerplatePro.Web.BoilerplateProWebModule, BoilerplatePro.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:12:32,917 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BoilerplatePro.BoilerplateProDataModule, BoilerplatePro.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:12:32,917 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:12:32,918 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:12:32,918 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:12:32,919 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:12:32,920 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:12:32,920 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:12:32,921 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BoilerplatePro.BoilerplateProCoreModule, BoilerplatePro.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:12:32,921 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BoilerplatePro.BoilerplateProApplicationModule, BoilerplatePro.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:12:32,921 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:12:32,922 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BoilerplatePro.Api.BoilerplateProWebApiModule, BoilerplatePro.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:12:32,922 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:12:32,922 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:12:32,923 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:12:32,923 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:12:32,923 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:12:32,934 [1    ] Abp.Modules.AbpModuleManager             - 17 modules loaded.
+DEBUG 2020-10-27 15:12:33,779 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-10-27 15:12:33,779 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-10-27 15:12:33,779 [1    ] o.Configuration.LanguageManagementConfig - Converted BoilerplatePro (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-10-27 15:12:33,779 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-10-27 15:12:34,746 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: BoilerplatePro.EntityFramework.BoilerplateProDbContext, BoilerplatePro.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:12:39,637 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2020-10-27 15:12:39,759 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2020-10-27 15:12:39,792 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2020-10-27 15:12:39,804 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: BoilerplatePro
+DEBUG 2020-10-27 15:12:39,857 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2020-10-27 15:12:40,150 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2020-10-27 15:12:40,240 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 11 classes define auto mapping attributes
+DEBUG 2020-10-27 15:12:40,240 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2020-10-27 15:12:40,253 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.Sessions.Dto.UserLoginInfoDto
+DEBUG 2020-10-27 15:12:40,254 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.Users.Dto.CreateUserDto
+DEBUG 2020-10-27 15:12:40,254 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.Users.Dto.UpdateUserDto
+DEBUG 2020-10-27 15:12:40,254 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.Users.Dto.UserDto
+DEBUG 2020-10-27 15:12:40,255 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.Roles.Dto.PermissionDto
+DEBUG 2020-10-27 15:12:40,255 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2020-10-27 15:12:40,255 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.MultiTenancy.Dto.EditTenantDto
+DEBUG 2020-10-27 15:12:40,255 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.MultiTenancy.Dto.TenantDto
+DEBUG 2020-10-27 15:12:40,255 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.Web.Models.Account.TenantChangeViewModel
+DEBUG 2020-10-27 15:12:40,255 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2020-10-27 15:12:45,278 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BoilerplatePro.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2020-10-27 15:12:45,280 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BoilerplatePro.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2020-10-27 15:12:45,282 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BoilerplatePro.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2020-10-27 15:12:45,284 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BoilerplatePro.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2020-10-27 15:12:45,286 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BoilerplatePro.Configuration.IConfigurationAppService' with service name 'app/configuration'.
+DEBUG 2020-10-27 15:12:45,288 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BoilerplatePro.Authorization.Accounts.IAccountAppService' with service name 'app/account'.
+DEBUG 2020-10-27 15:14:37,661 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2020-10-27 15:14:37,693 [1    ] Abp.Modules.AbpModuleManager             - Found 17 ABP modules in total.
+DEBUG 2020-10-27 15:14:37,706 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BoilerplatePro.Web.BoilerplateProWebModule, BoilerplatePro.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:14:37,710 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BoilerplatePro.BoilerplateProDataModule, BoilerplatePro.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:14:37,710 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:14:37,710 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:14:37,711 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:14:37,711 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:14:37,711 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:14:37,712 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:14:37,712 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BoilerplatePro.BoilerplateProCoreModule, BoilerplatePro.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:14:37,712 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BoilerplatePro.BoilerplateProApplicationModule, BoilerplatePro.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:14:37,712 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:14:37,712 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BoilerplatePro.Api.BoilerplateProWebApiModule, BoilerplatePro.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:14:37,712 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:14:37,713 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:14:37,713 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:14:37,713 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:14:37,713 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:14:37,718 [1    ] Abp.Modules.AbpModuleManager             - 17 modules loaded.
+DEBUG 2020-10-27 15:14:38,155 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-10-27 15:14:38,155 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-10-27 15:14:38,155 [1    ] o.Configuration.LanguageManagementConfig - Converted BoilerplatePro (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-10-27 15:14:38,155 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-10-27 15:14:38,641 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: BoilerplatePro.EntityFramework.BoilerplateProDbContext, BoilerplatePro.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:14:42,158 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2020-10-27 15:14:42,313 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2020-10-27 15:14:42,349 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2020-10-27 15:14:42,359 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: BoilerplatePro
+DEBUG 2020-10-27 15:14:42,371 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2020-10-27 15:14:42,684 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2020-10-27 15:14:42,831 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 11 classes define auto mapping attributes
+DEBUG 2020-10-27 15:14:42,831 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2020-10-27 15:14:42,843 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.Sessions.Dto.UserLoginInfoDto
+DEBUG 2020-10-27 15:14:42,844 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.Users.Dto.CreateUserDto
+DEBUG 2020-10-27 15:14:42,844 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.Users.Dto.UpdateUserDto
+DEBUG 2020-10-27 15:14:42,845 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.Users.Dto.UserDto
+DEBUG 2020-10-27 15:14:42,845 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.Roles.Dto.PermissionDto
+DEBUG 2020-10-27 15:14:42,845 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2020-10-27 15:14:42,845 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.MultiTenancy.Dto.EditTenantDto
+DEBUG 2020-10-27 15:14:42,845 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.MultiTenancy.Dto.TenantDto
+DEBUG 2020-10-27 15:14:42,845 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.Web.Models.Account.TenantChangeViewModel
+DEBUG 2020-10-27 15:14:42,845 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2020-10-27 15:14:47,225 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BoilerplatePro.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2020-10-27 15:14:47,227 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BoilerplatePro.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2020-10-27 15:14:47,228 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BoilerplatePro.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2020-10-27 15:14:47,229 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BoilerplatePro.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2020-10-27 15:14:47,231 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BoilerplatePro.Configuration.IConfigurationAppService' with service name 'app/configuration'.
+DEBUG 2020-10-27 15:14:47,232 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BoilerplatePro.Authorization.Accounts.IAccountAppService' with service name 'app/account'.
+DEBUG 2020-10-27 15:15:11,118 [11   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"f4c5ac5e-d0bc-4beb-853d-041444bfc8b2","IpAddress":"::1","TenantId":null,"UserId":2,"ConnectTime":"2020-10-27T15:15:11.1009528+02:00","Properties":{}}
+DEBUG 2020-10-27 15:15:11,201 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: f4c5ac5e-d0bc-4beb-853d-041444bfc8b2
+DEBUG 2020-10-27 15:15:44,706 [11   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: f4c5ac5e-d0bc-4beb-853d-041444bfc8b2
+DEBUG 2020-10-27 15:15:46,520 [13   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"3059c92c-776c-4c00-ac47-a08e35615c7a","IpAddress":"::1","TenantId":null,"UserId":2,"ConnectTime":"2020-10-27T15:15:46.5197441+02:00","Properties":{}}
+DEBUG 2020-10-27 15:15:46,570 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 3059c92c-776c-4c00-ac47-a08e35615c7a
+DEBUG 2020-10-27 15:16:07,788 [5    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 3059c92c-776c-4c00-ac47-a08e35615c7a
+DEBUG 2020-10-27 15:16:09,444 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"a17d6847-36b3-43fe-9574-7cd546774621","IpAddress":"::1","TenantId":null,"UserId":2,"ConnectTime":"2020-10-27T15:16:09.4448316+02:00","Properties":{}}
+DEBUG 2020-10-27 15:16:09,518 [18   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: a17d6847-36b3-43fe-9574-7cd546774621
+DEBUG 2020-10-27 15:16:30,515 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: a17d6847-36b3-43fe-9574-7cd546774621
+DEBUG 2020-10-27 15:16:32,739 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"f7ed9496-411a-4433-a076-0bf09009a799","IpAddress":"::1","TenantId":null,"UserId":2,"ConnectTime":"2020-10-27T15:16:32.7381189+02:00","Properties":{}}
+DEBUG 2020-10-27 15:16:32,777 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: f7ed9496-411a-4433-a076-0bf09009a799
+DEBUG 2020-10-27 15:16:39,273 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: f7ed9496-411a-4433-a076-0bf09009a799
+DEBUG 2020-10-27 15:16:41,904 [9    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"3c266c8b-3f0a-4cbc-ab47-cdda519c6ee3","IpAddress":"::1","TenantId":null,"UserId":2,"ConnectTime":"2020-10-27T15:16:41.9046005+02:00","Properties":{}}
+DEBUG 2020-10-27 15:16:42,009 [11   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 3c266c8b-3f0a-4cbc-ab47-cdda519c6ee3
+DEBUG 2020-10-27 15:17:36,021 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2020-10-27 15:17:36,045 [1    ] Abp.Modules.AbpModuleManager             - Found 17 ABP modules in total.
+DEBUG 2020-10-27 15:17:36,057 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BoilerplatePro.Web.BoilerplateProWebModule, BoilerplatePro.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:17:36,060 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BoilerplatePro.BoilerplateProDataModule, BoilerplatePro.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:17:36,060 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:17:36,060 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:17:36,061 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:17:36,061 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:17:36,062 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:17:36,062 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:17:36,062 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BoilerplatePro.BoilerplateProCoreModule, BoilerplatePro.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:17:36,062 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BoilerplatePro.BoilerplateProApplicationModule, BoilerplatePro.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:17:36,062 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:17:36,063 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BoilerplatePro.Api.BoilerplateProWebApiModule, BoilerplatePro.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:17:36,063 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:17:36,063 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:17:36,063 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:17:36,063 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:17:36,064 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:17:36,069 [1    ] Abp.Modules.AbpModuleManager             - 17 modules loaded.
+DEBUG 2020-10-27 15:17:36,571 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-10-27 15:17:36,571 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-10-27 15:17:36,571 [1    ] o.Configuration.LanguageManagementConfig - Converted BoilerplatePro (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-10-27 15:17:36,571 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-10-27 15:17:37,119 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: BoilerplatePro.EntityFramework.BoilerplateProDbContext, BoilerplatePro.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-10-27 15:17:40,633 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2020-10-27 15:17:40,729 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2020-10-27 15:17:40,752 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2020-10-27 15:17:40,761 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: BoilerplatePro
+DEBUG 2020-10-27 15:17:40,772 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2020-10-27 15:17:41,023 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2020-10-27 15:17:41,111 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 11 classes define auto mapping attributes
+DEBUG 2020-10-27 15:17:41,112 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2020-10-27 15:17:41,121 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.Sessions.Dto.UserLoginInfoDto
+DEBUG 2020-10-27 15:17:41,122 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.Users.Dto.CreateUserDto
+DEBUG 2020-10-27 15:17:41,123 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.Users.Dto.UpdateUserDto
+DEBUG 2020-10-27 15:17:41,123 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.Users.Dto.UserDto
+DEBUG 2020-10-27 15:17:41,123 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.Roles.Dto.PermissionDto
+DEBUG 2020-10-27 15:17:41,123 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2020-10-27 15:17:41,123 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.MultiTenancy.Dto.EditTenantDto
+DEBUG 2020-10-27 15:17:41,123 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.MultiTenancy.Dto.TenantDto
+DEBUG 2020-10-27 15:17:41,124 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.Web.Models.Account.TenantChangeViewModel
+DEBUG 2020-10-27 15:17:41,124 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BoilerplatePro.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2020-10-27 15:17:45,996 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BoilerplatePro.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2020-10-27 15:17:45,999 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BoilerplatePro.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2020-10-27 15:17:46,001 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BoilerplatePro.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2020-10-27 15:17:46,004 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BoilerplatePro.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2020-10-27 15:17:46,006 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BoilerplatePro.Configuration.IConfigurationAppService' with service name 'app/configuration'.
+DEBUG 2020-10-27 15:17:46,009 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BoilerplatePro.Authorization.Accounts.IAccountAppService' with service name 'app/account'.
+DEBUG 2020-10-27 15:18:09,744 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"f6029d6b-25da-4cca-ac80-94f0915e5e01","IpAddress":"::1","TenantId":null,"UserId":2,"ConnectTime":"2020-10-27T15:18:09.7251976+02:00","Properties":{}}
+DEBUG 2020-10-27 15:18:09,840 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: f6029d6b-25da-4cca-ac80-94f0915e5e01
+DEBUG 2020-10-27 15:18:13,163 [11   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: f6029d6b-25da-4cca-ac80-94f0915e5e01
+DEBUG 2020-10-27 15:18:15,567 [15   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"8971c55b-cdf6-401b-b7df-ebf5146aa3bb","IpAddress":"::1","TenantId":null,"UserId":2,"ConnectTime":"2020-10-27T15:18:15.5665713+02:00","Properties":{}}
+DEBUG 2020-10-27 15:18:15,630 [13   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 8971c55b-cdf6-401b-b7df-ebf5146aa3bb
+DEBUG 2020-10-27 15:19:30,386 [35   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 8971c55b-cdf6-401b-b7df-ebf5146aa3bb
+DEBUG 2020-10-27 15:19:32,514 [37   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"5a77cb5f-4ccf-4d63-94b0-7d3226fca552","IpAddress":"::1","TenantId":null,"UserId":2,"ConnectTime":"2020-10-27T15:19:32.5132907+02:00","Properties":{}}
+DEBUG 2020-10-27 15:19:32,567 [35   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 5a77cb5f-4ccf-4d63-94b0-7d3226fca552
+DEBUG 2020-10-27 15:19:36,024 [10   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 5a77cb5f-4ccf-4d63-94b0-7d3226fca552
+DEBUG 2020-10-27 15:19:38,233 [36   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"b2077718-d729-4873-8167-351977d2d488","IpAddress":"::1","TenantId":null,"UserId":2,"ConnectTime":"2020-10-27T15:19:38.2339883+02:00","Properties":{}}
+DEBUG 2020-10-27 15:19:38,280 [37   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: b2077718-d729-4873-8167-351977d2d488
+DEBUG 2020-10-27 15:19:41,715 [10   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: b2077718-d729-4873-8167-351977d2d488
+DEBUG 2020-10-27 15:19:43,763 [29   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"407b10ee-c97e-49ff-b89f-ef847f3d483d","IpAddress":"::1","TenantId":null,"UserId":2,"ConnectTime":"2020-10-27T15:19:43.7633851+02:00","Properties":{}}
+DEBUG 2020-10-27 15:19:43,922 [29   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 407b10ee-c97e-49ff-b89f-ef847f3d483d
+DEBUG 2020-10-27 15:20:08,488 [10   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 407b10ee-c97e-49ff-b89f-ef847f3d483d
+DEBUG 2020-10-27 15:20:10,411 [38   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"f7b8e6f3-ba2f-42a9-b2b9-8b8456ab2bd1","IpAddress":"::1","TenantId":null,"UserId":2,"ConnectTime":"2020-10-27T15:20:10.4111466+02:00","Properties":{}}
+DEBUG 2020-10-27 15:20:10,470 [11   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: f7b8e6f3-ba2f-42a9-b2b9-8b8456ab2bd1
+DEBUG 2020-10-27 15:21:16,159 [18   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: f7b8e6f3-ba2f-42a9-b2b9-8b8456ab2bd1
+DEBUG 2020-10-27 15:21:18,638 [34   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"51dfb1f9-6dd7-4207-8e00-eb5314a4ef55","IpAddress":"::1","TenantId":null,"UserId":2,"ConnectTime":"2020-10-27T15:21:18.6384937+02:00","Properties":{}}
+DEBUG 2020-10-27 15:21:18,690 [12   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 51dfb1f9-6dd7-4207-8e00-eb5314a4ef55
+DEBUG 2020-10-27 15:21:30,467 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 51dfb1f9-6dd7-4207-8e00-eb5314a4ef55
+DEBUG 2020-10-27 15:21:32,604 [54   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"7ef67dd3-01e7-4f69-849a-7693e4b8d99f","IpAddress":"::1","TenantId":null,"UserId":2,"ConnectTime":"2020-10-27T15:21:32.6044386+02:00","Properties":{}}
+DEBUG 2020-10-27 15:21:32,782 [34   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 7ef67dd3-01e7-4f69-849a-7693e4b8d99f
+DEBUG 2020-10-27 15:21:40,603 [58   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 7ef67dd3-01e7-4f69-849a-7693e4b8d99f
+DEBUG 2020-10-27 15:21:45,183 [25   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"1bf40964-984a-4349-bdcb-58a41c4f61b1","IpAddress":"::1","TenantId":null,"UserId":2,"ConnectTime":"2020-10-27T15:21:45.1833654+02:00","Properties":{}}
+DEBUG 2020-10-27 15:21:45,347 [18   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 1bf40964-984a-4349-bdcb-58a41c4f61b1
+DEBUG 2020-10-27 15:21:56,563 [55   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 1bf40964-984a-4349-bdcb-58a41c4f61b1
+DEBUG 2020-10-27 15:21:58,901 [13   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"aa66c75b-480f-4818-9245-92aa88f50148","IpAddress":"::1","TenantId":null,"UserId":2,"ConnectTime":"2020-10-27T15:21:58.9018454+02:00","Properties":{}}
+DEBUG 2020-10-27 15:21:58,973 [55   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: aa66c75b-480f-4818-9245-92aa88f50148

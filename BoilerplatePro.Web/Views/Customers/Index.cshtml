@@ -1,0 +1,37 @@
+﻿@model List<BoilerplatePro.nuDirect.CustomerEntities>
+@{
+    ViewBag.Title = "Customers";
+}
+
+<div class="card">
+    <div class="header">
+        <h2>Customers</h2>
+    </div>
+    <div class="body">
+        <table class="table">
+            <tr>
+                <th>Customer</th>
+                <th>Primary Contact</th>
+            </tr>
+            @foreach (BoilerplatePro.nuDirect.CustomerEntities item in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(item.Company, "ViewCustomer", new { id = item.CustomerId })</td>
+                    <td>
+                        @if (item.Contacts.Count() == 0)
+                        {
+                            <p>No Contact Specified</p>
+                        }
+                        else
+                        {
+                            @Html.Raw(item.Contacts.First().Surname + ", " + @item.Contacts.First().Name + "<br/>" +
+                            @item.Contacts.First().Mobile + "<br/>")
+                            <a href="mailto:@item.Contacts.First().Email" target="_blank">@item.Contacts.First().Email</a>
+                        }
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+

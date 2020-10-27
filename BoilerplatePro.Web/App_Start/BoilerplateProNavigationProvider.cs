@@ -26,6 +26,13 @@ namespace BoilerplatePro.Web
                     )
                 ).AddItem(
                     new MenuItemDefinition(
+                        PageNames.Customers,
+                        L("Customers"),
+                        url: "Customers",
+                        icon: "people"
+                    )
+                ).AddItem(
+                    new MenuItemDefinition(
                         PageNames.Endpoints,
                         L("Endpoints"),
                         url: "Endpoints",
