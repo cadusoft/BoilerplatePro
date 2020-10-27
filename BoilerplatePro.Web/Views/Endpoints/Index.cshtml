@@ -44,11 +44,11 @@
                         @Html.ActionLink(item.Description, "ShowEndpointData", new { id = item.EndpointId })
                     </td>
                     <td>
-                        @if (item.LastSeenDate < DateTime.Now.AddDays(1) && item.epType != "SFTP Server")
+                        @if (item.LastSeenDate < DateTime.Now.AddDays(-1) && item.epType != "SFTP Server")
                         {
                             <i class="material-icons" style="color:red;">report</i>
                         }
-                        else if (item.LastSeenDate < DateTime.Now.AddHours(6) && item.epType != "SFTP Server")
+                        else if (item.LastSeenDate < DateTime.Now.AddHours(-6) && item.epType != "SFTP Server")
                         {
                             <i class="material-icons" style="color:orange;">help</i>
                         }
